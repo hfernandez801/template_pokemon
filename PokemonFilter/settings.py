@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
-#from decouple import config
+from decouple import config
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -20,10 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY ='#n!5e5jg3vf*9pbeih0%2_!6$oab)m=r&5#u6b@&#6fu1(ydsm'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', cast=bool)
 ALLOWED_HOSTS = ['*']
 
 
@@ -150,4 +150,4 @@ STATIC_URL = '/static/'
 RESOURCES = os.path.join(BASE_DIR, 'resources')
 
 #Traditional URLS
-POKEMON_URL_ENDOINT='https://pokeapi.co/api/v2'
+POKEMON_URL_ENDOINT=config('POK_ENDPOINT')
