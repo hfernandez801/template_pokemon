@@ -146,7 +146,15 @@ USE_L10N = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+#STATIC_URL = '/static/'
+# Production Linux + urls.py
+STATICFILES_DIRS = ()
+STATIC_ROOT = os.path.join(BASE_DIR, 'templates/static/')
 STATIC_URL = '/static/'
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'templates/media/')
+# MEDIA_URL = '/media/'
+
+
 RESOURCES = os.path.join(BASE_DIR, 'resources')
 
 #Traditional URLS
